@@ -7,6 +7,14 @@ import { sendTelegramMessage } from "@/lib/telegram";
 export const dynamic = 'force-dynamic';
 
 export async function GET(req: NextRequest) {
+    // 0. Security Check
+    const authHeader = req.headers.get('authorization');
+    const cronSecret = process.env.CRON_SECRET;
+
+    if (cronSecret && authHeader !== `Bearer ${cronSecret}`) {
+        return NextResponse.json({ message: "Unauthorized" }, { status: 401 });
+    }
+
     // 1. Fetch all watchlist items
     const { data: watchlist, error } = await supabase
         .from("watchlist")
