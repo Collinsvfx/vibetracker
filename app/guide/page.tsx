@@ -59,7 +59,7 @@ export default function TradingGuide() {
                             </div>
                             <div className="bg-red-900/20 border border-red-500/30 p-4 rounded-xl">
                                 <h3 className="font-bold text-red-400 mb-1">Top Holders</h3>
-                                <p className="text-xs">If one wallet holds >20%, they own the price.</p>
+                                <p className="text-xs">If one wallet holds &gt;20%, they own the price.</p>
                             </div>
                         </div>
                     </section>
