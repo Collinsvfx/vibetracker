@@ -38,6 +38,7 @@ export interface DexScreenerPair {
         base: number;
         quote: number;
     };
+    fdv?: number;
     fda?: number;
     boosts?: {
         active: number;
