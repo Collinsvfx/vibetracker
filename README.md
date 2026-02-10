@@ -1,52 +1,58 @@
 # 🛸 VibeTracker
 
-**Memecoin Intelligence & Sentinel System**
+**Sentient Memecoin Intelligence & Sentinel System**
 
-A full-stack Next.js application that scans for trending tokens on DexScreener, allows you to bookmark/monitor them ("Vault"), and sends real-time Telegram alerts when they moon ("Sentinel").
+A full-stack Next.js application designed to scan, analyze, and monitor the memecoin jungle. VibeTracker doesn't just show you tokens; it gives you the tools to survive and profit.
 
-## 🛠️ Prerequisites
+---
 
-**Crucial**: You need to install **Node.js** to run this application.
-1.  Download Node.js (LTS version) from [nodejs.org](https://nodejs.org/).
-2.  Install it and restart your terminal.
+## ⚡ Key Features
 
-## 🚀 Getting Started
+*   **🔥 Trending Feed**: Real-time scan of tokens with community momentum (Solana & Base).
+*   **🛡️ Safety Score**: Automated risk assessment (Safest, Riskiest, Newest) based on liquidity, volume, and age.
+*   **🔮 Crystal Ball**: 24h price projections based on current momentum (standardized at a $10 baseline).
+*   **🛡️ Deep Scan (RugCheck)**: Direct integration with external security tools for contract verification.
+*   **🧮 Profit Calculator**: Real-time ROI and Net Gain tracking (subtracting fees and gas automatically).
+*   **💊 DEX Badges**: Visual indicators for Pump.fun and other DEX origins.
+*   **🛰️ The Sentinel**: Background monitoring that sends Telegram alerts the moment your tokens hit a profit target.
+
+---
+
+## 📚 Guides & Strategy
+
+*   **[🎯 Sniper Trading Strategy (TRADE.md)](./TRADE.md)**: A beginner-friendly guide on when to enter, when to exit, and how to avoid rugs.
+*   **[🚀 Vercel Deployment Guide (DEPLOY.md)](./DEPLOY.md)**: How to host this app and set up automated monitoring for free.
+
+---
+
+## 🚀 Getting Started (Local)
 
 ### 1. Install Dependencies
-Open a terminal in this folder (`vibetracker`) and run:
 ```bash
 npm install
 ```
 
-### 2. Set up Supabase (Database)
-1.  Create a project at [supabase.com](https://supabase.com).
-2.  Go to the **SQL Editor** in your Supabase dashboard.
-3.  Copy the contents of `supabase/schema.sql` and run it to create the `watchlist` table.
-4.  Get your **Project URL** and **Anon Key** from Project Settings > API.
+### 2. Set up Database & Local Environment
+1.  **Supabase**: Create a project, run the SQL in `supabase/schema.sql`, and get your API keys.
+2.  **Environment**: Copy `.env.local.example` to `.env.local` and fill in:
+    *   `NEXT_PUBLIC_SUPABASE_URL`
+    *   `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+    *   `TELEGRAM_BOT_TOKEN`
+    *   `CRON_SECRET`
 
-### 3. Set up Environment Variables
-1.  Copy `.env.local.example` to `.env.local`:
-    ```bash
-    cp .env.local.example .env.local
-    # Or manually rename the file
-    ```
-2.  Fill in your Supabase credentials in `.env.local`.
-3.  (Optional) Add your `TELEGRAM_BOT_TOKEN` if you want alerts.
-
-### 4. Run the App
+### 3. Run the App
 ```bash
 npm run dev
 ```
-Open [http://localhost:3000](http://localhost:3000) to see the dashboard.
 
-## ⚡ Features
+---
 
-*   **Scanner**: Live feed of trending tokens on Solana and Base (via DexScreener Token Boosts).
-*   **The Vault**: Click the bookmark icon on any token to save it to your Watchlist.
-*   **The Sentinel**: A background process monitors your vault.
-    *   To test alerts manually, run: `node scripts/test-alerts.js` (requires the app to be running).
-    *   In production, you would set up a Cron job to hit `/api/sentinel` every 60s.
+## 🎨 Technology Stack
+*   **Framework**: Next.js 14
+*   **Database**: Supabase
+*   **Styling**: Tailwind CSS + Custom Glassmorphism
+*   **Icons**: Lucide React
+*   **Charts**: TradingView Embeds
 
-## 🎨 Design
-Built with **Next.js 14**, **Tailwind CSS**, and **Framer Motion**.
-Featuring a "Dark Mode" aesthetic with neon purple/violet accents and glassmorphism cards.
+---
+*Disclaimer: Not financial advice. VibeTracker is a tool for data analysis. Always do your own research.*
